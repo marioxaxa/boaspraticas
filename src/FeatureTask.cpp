@@ -2,7 +2,7 @@
 #include "../include/FeatureTask.h"
 #include "../include/formatters/Date.h"
 
-FeatureTask::FeatureTask() : Task()
+FeatureTask::FeatureTask() : Task(), project()
 {
     project = "";
 }
@@ -11,22 +11,22 @@ FeatureTask::~FeatureTask()
 {
 }
 
-FeatureTask::FeatureTask(std::string project) : Task("FEATURE")
+FeatureTask::FeatureTask(std::const string &project) : Task("FEATURE")
 {
     this->project = project;
 }
 
-FeatureTask::FeatureTask(std::string title, std::string project) : Task(title, "FEATURE")
+FeatureTask::FeatureTask(std::const string &title, std::const string &project) : Task(title, "FEATURE")
 {
     this->project = project;
 }
 
-FeatureTask::FeatureTask(std::string title, std::string description, std::string project) : Task(title, description, "FEATURE")
+FeatureTask::FeatureTask(std::const string &title, std::const string &description, std::const string &project) : Task(title, description, "FEATURE")
 {
     this->project = project;
 }
 
-FeatureTask::FeatureTask(std::string title, std::string description, tm deadline, std::string project) : Task(title, description, deadline, "FEATURE")
+FeatureTask::FeatureTask(std::const string &title, std::const string &description, tm deadline, std::const string &project) : Task(title, description, deadline, "FEATURE")
 {
     this->project = project;
 }

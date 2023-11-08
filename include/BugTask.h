@@ -21,7 +21,7 @@ public:
      * @brief Constructs a BugTask object with a specified column and priority.
      * @param priority The priority of the bug task.
      */
-    BugTask(int priority);
+    explicit (int priority);
 
     /**
      * @brief Constructs a BugTask object with a specified column, title, and priority.
@@ -67,7 +67,7 @@ public:
     /**
      * @brief Prints the bug task.
      */
-    void print();
+    void print() override;
 
     /**
      * @brief Serialize the board.

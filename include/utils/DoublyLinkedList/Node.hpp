@@ -29,7 +29,7 @@ public:
      *
      * @param val The value to be stored in the node.
      */
-    Node(T *value);
+    explicit (T *value);
 
     /**
      * @brief Constructor with value, next, and previous parameters.

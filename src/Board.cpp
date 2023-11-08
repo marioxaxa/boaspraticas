@@ -7,7 +7,7 @@ Board::Board()
   setCreatedAt();
 }
 
-Board::Board(string name, string description)
+Board::Board(const string &name, const string &description)
 {
   this->name = name;
   this->description = description;
@@ -16,7 +16,7 @@ Board::Board(string name, string description)
   setCreatedAt();
 }
 
-Board::Board(string name)
+Board::Board(const string &name)
 {
   this->name = name;
   setCreatedAt();
@@ -54,13 +54,6 @@ void Board::setCreatedAt()
   this->createdAt = *localTime;
 }
 
-void Board::displayCreatedAt()
-{
-  char dateTime[100];
-  std::strftime(dateTime, sizeof(dateTime), "%d/%m/%Y as %Hh%Mmin", &createdAt);
-  std::cout << "Criado em: " << dateTime << std::endl;
-}
-
 void Board::addColumn(Column *column)
 {
   this->columns->insertAtTail(column);
@@ -87,22 +80,6 @@ void Board::moveTask(Task *task, Column &column)
   }
 }
 
-void Board::addTaskToBacklog(Task *task)
-{
-  this->backlog.push_back(task);
-}
-
-void Board::removeTaskFromBacklog(Task *task)
-{
-  for (std::size_t i = 0; i < this->backlog.size(); i++)
-  {
-    if (this->backlog[i]->getId() == task->getId())
-    {
-      this->backlog.erase(this->backlog.begin() + i);
-    }
-  }
-}
-
 void Board::print()
 {
   int sizeColumns = this->columns->getSize();
@@ -118,7 +95,7 @@ void Board::print()
   cout << endl;
 }
 
-Column *Board::getColumnById(string id)
+Column *Board::getColumnById(const string &id)
 {
   for (int i = 0; i < this->columns->getSize(); i++)
   {
@@ -148,7 +125,7 @@ Column *Board::getColumnByTask(Task *task)
   return nullptr;
 }
 
-Task *Board::searchTaskById(string id)
+Task *Board::searchTaskById(const string &id)
 {
   for (int i = 0; i < this->columns->getSize(); i++)
   {

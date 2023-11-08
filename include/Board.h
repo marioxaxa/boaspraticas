@@ -40,7 +40,7 @@ public:
      * @brief Constructs a new Board object.
      * @param name The name of the board.
      */
-    Board(string name);
+    explicit (string name);
 
     /**
      * @brief Destroys the Board object and all its columns and tasks.

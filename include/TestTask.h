@@ -42,13 +42,13 @@ public:
      * @param title The title of the test task.
      * @param project The project associated with the test task.
      */
-    TestTask(std::string title);
+    explicit (std::string title);
 
     /**
      * @brief Constructs a TestTask object with a specified column and project.
      * @param feature The feature associated with the test task.
      */
-    TestTask(FeatureTask *feature);
+    explicit (FeatureTask *feature);
 
     /**
      * @brief Constructs a TestTask object with a specified column, title, description, deadline, and project.
@@ -88,7 +88,7 @@ public:
     /**
      * @brief Prints the test task.
      */
-    void print();
+    void print() override;
 
     /**
      * @brief Serialize the board.

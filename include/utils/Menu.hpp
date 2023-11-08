@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <cstdlib>
 
 #include "../Board.h"
 #include "../Column.h"
@@ -447,7 +448,7 @@ public:
         {
             string name, description;
             char ordered;
-            int order;
+            
             Column *newColumn = nullptr;
 
             cout << "Nome da coluna: ";
@@ -464,6 +465,7 @@ public:
             {
                 cout << "Ordem da coluna (1 a " << board->getColumnCount() + 1 << "): ";
 
+                int order;
                 cin >> order;
 
                 while (order < 1 || order > board->getColumnCount() + 1)
@@ -616,7 +618,7 @@ public:
         cin >> option;
         cin.ignore();
 
-        while (option < 1 && option > 3)
+        while (option > 3)
         {
             cout << "O numero digitado nao corresponde a nenhuma opcao. Tente novamente.\n";
             cout << "Escolha um criterio de ordenacao: ";

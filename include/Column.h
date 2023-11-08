@@ -56,7 +56,7 @@ public:
      * @brief Constructs a new Column object.
      * @param name The name of the column.
      */
-    Column(const string &name);
+    explicit (const string &name);
 
     /**
      * @brief Destroys the Column object and all its tasks.

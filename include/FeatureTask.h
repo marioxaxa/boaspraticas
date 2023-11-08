@@ -18,7 +18,7 @@ public:
      * @brief Constructs a FeatureTask object with a specified column and project.
      * @param project The project associated with the feature task.
      */
-    FeatureTask(std::string project);
+    explicit (std::string project);
 
     /**
      * @brief Constructs a FeatureTask object with a specified column, title, and project.
